@@ -11,5 +11,10 @@
   - [ ] change network name (golden-raider-mk2.local)
 - [ ] `sudo apt-get update && sudo apt-get upgrade`
 - [ ] reboot headless, ssh in
-- [ ] add necessary users and privileges (Always leave yourself a way in)
+- [ ] add necessary users and privileges
+  - [ ] Sabine_ATX
+  - [ ] autopilot
+  - [ ] Visitor
+- [ ] Remove default `pi` user
 - [ ] install necessary dependencies
+  - [ ] python3, pip3, wiringpi
