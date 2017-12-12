@@ -1,1 +1,1 @@
-rsync -a -v code/ IP_ADDRESS:~/code
+rsync -a -v code/ ATX_Sabine@golden-raider-mk2.local:~/code
