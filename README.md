@@ -10,5 +10,5 @@ We want bridge and engine lighting, an imperial logo shade on the large engine, 
 
 ## OK, How do I learn more?
 
-[Parts List](./PARTS.md)
-[Build Log](./LOGS.md)
+[Parts List](./DOCS/PARTS.md)
+[Build Log](./LOGS/)
