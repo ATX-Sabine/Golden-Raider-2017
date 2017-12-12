@@ -2,6 +2,8 @@
 
 ## Robotics Parts
 
+These are parts used directly in the assembly of the Golden Raider Mk. 2
+
 | Part Name | Part Description | Part Suppliers | Number Needed | Part Cost (USD) |
 | -- | -- | -- | -- | -- |
 | Raspberry Pi Zero W | Ship's Main Computer | [Rapberry Pi Org](https://www.raspberrypi.org/products/) | 1 | $10 |
@@ -13,6 +15,25 @@
 
 ## Tools
 
+The tools I used to got everything set up, assembled, etc. These will come in handy if you're trying to replicate this.
+
+* Diagonal Wire Cutters
+* Cell Phone Repair kit (for disassembly of the ship without destroying it)
+* Wire strippers
+* Pliers
+* Soldering Iron
+
 ## Consumables
 
+Various odds n' ends of negligible cost that went towards assembly
+
+* Solder
+* Heatshrink Tubing
+* 22-gauge solid-core wire
+* Couple of PCB's to wire parts together
+
 ## Scavenged Parts
+
+Crap I grabbed from my home, or that you probably have lying around or can get secondhand
+
+* Old Wiimote (NOT WiiMotion Plus)
