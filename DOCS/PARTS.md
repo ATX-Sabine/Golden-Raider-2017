@@ -3,6 +3,7 @@
 ## Robotics Parts
 
 | Part Name | Part Description | Part Suppliers | Number Needed | Part Cost (USD) |
+| -- | -- | -- | -- | -- |
 | Raspberry Pi Zero W | Ship's Main Computer | [Rapberry Pi Org](https://www.raspberrypi.org/products/) | 1 | $10 |
 | SX1509 16-GPIO Expander Breakout Board | GPIO PWM Interface for light effects | [SparkFun](https://www.sparkfun.com/products/13601) | 2 | 2 x $4.95 = $9.90 |
 | LED- 3W Aluminum PCB (Cool White) | Spotlights on trophy base | [SparkFun](https://www.sparkfun.com/products/13105) | 1 5-pack | $7.95 |
