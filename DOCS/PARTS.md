@@ -22,6 +22,8 @@ The tools I used to got everything set up, assembled, etc. These will come in ha
 * Wire strippers
 * Pliers
 * Soldering Iron
+* Hand drill with 0.5mm+ bits
+* [USB to TTL converter](https://www.amazon.com/ZYAMY-CP2102-Module-Serial-Downloader/dp/B07784SHF7/)
 
 ## Consumables
 
