@@ -1,0 +1,3 @@
+[submodule "code/SX1509-WiringPi-Python"]
+	path = code/SX1509-WiringPi-Python
+	url = git@github.com:ATX-Sabine/SX1509-WiringPi-Python.git
