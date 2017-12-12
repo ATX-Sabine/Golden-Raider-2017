@@ -8,6 +8,7 @@
   - [ ] set keyboard layout
   - [ ] set locale
   - [ ] enable SSH, I2C
+  - [ ] enable serial TTL login
   - [ ] change network name (golden-raider-mk2.local)
 - [ ] `sudo apt-get update && sudo apt-get upgrade`
 - [ ] reboot headless, ssh in
@@ -15,6 +16,7 @@
   - [ ] Sabine_ATX
   - [ ] autopilot
   - [ ] Visitor
+    - [ ] Set write privleges to `/etc/wpa_supplicant/wpa_supplicant.config`
 - [ ] Remove default `pi` user
 - [ ] install necessary dependencies
   - [ ] python3, pip3, wiringpi
