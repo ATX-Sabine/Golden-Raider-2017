@@ -33,7 +33,6 @@ Various odds n' ends of negligible cost that went towards assembly
 * Heatshrink Tubing
 * 22-gauge solid-core wire
 * Couple of PCB's to wire parts together
-
 ## Scavenged Parts
 
 Crap I grabbed from my home, or that you probably have lying around or can get secondhand
