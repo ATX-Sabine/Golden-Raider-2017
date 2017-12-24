@@ -103,3 +103,4 @@ ENV/
 # ATX_Sabine's Secrets
 
 SECRETS/
+.vscode/
