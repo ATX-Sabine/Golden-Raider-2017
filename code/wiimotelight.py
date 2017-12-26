@@ -21,6 +21,7 @@ wii.rpt_mode = cwiid.RPT_BTN
 
 expander = SX1509(0x3E)
 
+expander.reset(False)
 expander.startInternalClock()
 expander.setDisableInputBuffer(5, True)
 expander.setDisableInputBuffer(6, True)
