@@ -1,7 +1,7 @@
 import cwiid
 import time
 import sys
-sys.path.append('./SX1509-WiringPi-Python')
+sys.path.append('../SX1509-WiringPi-Python')
 from SX1509 import SX1509
 
 print('Press 1 + 2 on the WiiMote Now')
