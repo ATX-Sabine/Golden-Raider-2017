@@ -1,3 +1,5 @@
+import sys
+sys.path.append('./classes')
 from SoundController import SoundController
 from time import sleep
 
