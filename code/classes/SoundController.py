@@ -3,7 +3,7 @@ import subprocess
 class SoundController:
 
   FILES = {
-    'MARCH': './music/march.mp3'
+    'MARCH': '../music/march.mp3'
   }
 
   playing = False
