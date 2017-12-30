@@ -1,5 +1,6 @@
-import cwiid
 import time
+import cwiid
+from pydispatch import dispatcher
 
 class WiiMote:
   def __init__(self, wiimoteID):
