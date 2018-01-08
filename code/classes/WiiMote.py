@@ -5,18 +5,18 @@ import timeinterval
 class WiiMote:
 
   WIIMOTE_KEYS = {
-    'UP': 'up',
-    'DOWN': 'down',
-    'LEFT': 'left',
-    'RIGHT': 'right',
-    'A':'A',
-    'B': 'B',
-    'PLUS': 'plus',
-    'MINUS': 'minus',
-    'HOME': 'home',
-    'ONE': 'one',
-    'TWO': 'two',
-    'POWER': 'power',
+    'UP': cwiid.BTN_UP,
+    'DOWN': cwiid.BTN_DOWN,
+    'LEFT': cwiid.BTN_LEFT,
+    'RIGHT': cwiid.BTN_RIGHT,
+    'A': cwiid.BTN_A,
+    'B': cwiid.BTN_B,
+    'PLUS': cwiid.BTN_PLUS,
+    'MINUS': cwiid.BTN_MINUS,
+    'HOME': cwiid.BTN_HOME,
+    'ONE': cwiid.BTN_1,
+    'TWO': cwiid.BTN_2,
+    'POWER': 10000,
     'ANY': 'any'
   }
 
@@ -69,7 +69,37 @@ class WiiMote:
     return False
 
   def buttonsPressed(self):
-    return []
+    currentButtonState = self.device.state['buttons']
+    result = []
+    if(currentButtonState & int(self.WIIMOTE_KEYS['UP'])):
+      result.append(self.WIIMOTE_KEYS['UP'])
+    if(currentButtonState & int(self.WIIMOTE_KEYS['DOWN'])):
+      result.append(self.WIIMOTE_KEYS['DOWN'])
+    if(currentButtonState & int(self.WIIMOTE_KEYS['LEFT'])):
+      result.append(self.WIIMOTE_KEYS['LEFT'])
+    if(currentButtonState & int(self.WIIMOTE_KEYS['RIGHT'])):
+      result.append(self.WIIMOTE_KEYS['RIGHT'])
+    if(currentButtonState & int(self.WIIMOTE_KEYS['B'])):
+      result.append(self.WIIMOTE_KEYS['B'])
+    if(currentButtonState & int(self.WIIMOTE_KEYS['A'])):
+      result.append(self.WIIMOTE_KEYS['A'])
+    if(currentButtonState & int(self.WIIMOTE_KEYS['HOME'])):
+      result.append(self.WIIMOTE_KEYS['HOME'])
+    if(currentButtonState & int(self.WIIMOTE_KEYS['PLUS'])):
+      result.append(self.WIIMOTE_KEYS['PLUS'])
+    if(currentButtonState & int(self.WIIMOTE_KEYS['MINUS'])):
+      result.append(self.WIIMOTE_KEYS['MINUS'])
+    if(currentButtonState & int(self.WIIMOTE_KEYS['ONE'])):
+      result.append(self.WIIMOTE_KEYS['ONE'])
+    if(currentButtonState & int(self.WIIMOTE_KEYS['TWO'])):
+      result.append(self.WIIMOTE_KEYS['TWO'])
+    if(currentButtonState & int(self.WIIMOTE_KEYS['POWER'])):
+      result.append(self.WIIMOTE_KEYS['POWER'])
+
+    if not len(result) == 0:
+      result.append(self.WIIMOTE_KEYS['ANY'])
+
+    return result
 
   # def status(self):
     # pretty prints the status of the wiimote/nunchux
