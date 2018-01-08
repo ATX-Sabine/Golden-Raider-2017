@@ -55,7 +55,7 @@ class WiiMote:
       self.WIIMOTE_KEYS['TWO']: []
     }
 
-    self.timer = timeinterval.start(250, self.buttonsPressed)
+    self.timer = timeinterval.start(2500, self.buttonsPressed)
   
   def close(self):
     timer.stop()
@@ -65,9 +65,15 @@ class WiiMote:
     # returs True if attached, False otherwise
     return False
 
-  def on(self, handler):
-    return False
+  def on(self, buttonPressed, handler):
+    if self.buttonHandlers.has_key(buttonPressed):
+      self.buttonHandlers[buttonPressed].append(handler)
 
+  def callHandlers(self, buttonsPressed):
+    for button in buttonsPressed:
+      for handler in self.buttonHandlers[button]:
+        handler()
+      
   def buttonsPressed(self):
     currentButtonState = self.device.state['buttons']
     result = []
@@ -99,6 +105,7 @@ class WiiMote:
     if not len(result) == 0:
       result.append(self.WIIMOTE_KEYS['ANY'])
 
+    self.callHandlers(result)
     return result
 
   # def status(self):

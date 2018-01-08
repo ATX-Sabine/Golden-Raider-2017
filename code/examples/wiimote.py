@@ -6,6 +6,11 @@ from WiiMote import WiiMote
 
 wiimote = WiiMote(None)
 wiimote.init()
+
+def handlerAButton():
+  print('A button pressed')
+
+wiimote.on(wiimote.WIIMOTE_KEYS['A'], handlerAButton)
  
 while True:
 
