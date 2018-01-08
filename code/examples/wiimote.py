@@ -5,6 +5,7 @@ sys.path.append('../classes')
 from WiiMote import WiiMote
 
 wiimote = WiiMote(None)
+wiimote.init()
  
 while True:
 

@@ -21,7 +21,10 @@ class WiiMote:
   }
 
   def __init__(self, wiimoteID):
-    # Add code to make sure it's the right wiimote horo
+    self.deviceID = wiimoteID
+
+  def init(self):
+    # Add code to make sure it's the right wiimote
     print('Press 1 + 2 on the WiiMote Now')
     try:
       self.device=cwiid.Wiimote()
@@ -52,8 +55,11 @@ class WiiMote:
       self.WIIMOTE_KEYS['TWO']: []
     }
 
-  # set interval to check button here
-
+    self.timer = timeinterval.start(250, self.buttonsPressed)
+  
+  def close(self):
+    timer.stop()
+    exit(self.device)
 
   def checkForNunchuck(self):
     # returs True if attached, False otherwise
