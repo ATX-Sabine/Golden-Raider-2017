@@ -1,4 +1,5 @@
 import time
+from threading import Timer
 import cwiid
 import timeinterval
 
@@ -55,8 +56,9 @@ class WiiMote:
       self.WIIMOTE_KEYS['TWO']: []
     }
 
-    self.timer = timeinterval.start(2500, self.buttonsPressed)
-  
+    self.debounceWait = False
+    self.watchForButtonPress()
+
   def close(self):
     timer.stop()
     exit(self.device)
@@ -73,7 +75,20 @@ class WiiMote:
     for button in buttonsPressed:
       for handler in self.buttonHandlers[button]:
         handler()
-      
+
+  def watchForButtonPress(self):
+    self.timer = timeinterval.start(50, self.buttonsPressed)
+
+  def debounce(self):
+    print('start debounce')
+    self.debounceWait = True
+
+    def endDebounce(wiimote):
+      print('stop debounce')
+      wiimote.debounceWait = False
+
+    Timer(0.5, endDebounce, [self]).start()
+
   def buttonsPressed(self):
     currentButtonState = self.device.state['buttons']
     result = []
@@ -105,8 +120,13 @@ class WiiMote:
     if not len(result) == 0:
       result.append(self.WIIMOTE_KEYS['ANY'])
 
-    self.callHandlers(result)
-    return result
+    if not self.debounceWait and not len(result) == 0:
+      print('calling handlers')
+      self.callHandlers(result)
+      self.debounce()
+      return result
+    else:
+      return []
 
   # def status(self):
     # pretty prints the status of the wiimote/nunchux
