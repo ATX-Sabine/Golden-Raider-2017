@@ -9,9 +9,7 @@ class RGBLED:
     self.green = pins[1]
     self.blue = pins[2]
     self.commonAnode = commonAnode
-    self.expander.enablePWMPin(pins[0])
-    self.expander.enablePWMPin(pins[1])
-    self.expander.enablePWMPin(pins[2])
+    self.expander.enablePWMPins(pins)
 
   def on(self):
     self.setColor([0xFF, 0xFF, 0xFF])
