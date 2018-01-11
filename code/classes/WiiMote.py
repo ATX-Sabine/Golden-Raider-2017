@@ -80,11 +80,9 @@ class WiiMote:
     self.timer = timeinterval.start(50, self.buttonsPressed)
 
   def debounce(self):
-    print('start debounce')
     self.debounceWait = True
 
     def endDebounce(wiimote):
-      print('stop debounce')
       wiimote.debounceWait = False
 
     Timer(0.5, endDebounce, [self]).start()
@@ -121,7 +119,6 @@ class WiiMote:
       result.append(self.WIIMOTE_KEYS['ANY'])
 
     if not self.debounceWait and not len(result) == 0:
-      print('calling handlers')
       self.callHandlers(result)
       self.debounce()
       return result
