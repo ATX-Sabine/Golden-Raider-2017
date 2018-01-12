@@ -10,7 +10,8 @@ from RGBLED import RGBLED
 expander = SX1509(0x3E)
 expander.reset(False)
 
-rgbLED = RGBLED(expander, [0, 1, 2, 3], False)
+rgbLED = RGBLED(expander, [5, 6, 7, 8, 4], False)
+rgbLED2 = RGBLED(expander, [8, 9, 10, 11], False)
 
 wiimote = WiiMote(None)
 wiimote.init()
@@ -19,11 +20,13 @@ hue = 0
 
 def engineRed():
   rgbLED.setColor([255, 0, 0])
+  rgbLED2.setColor([0, 0, 255])
 
 wiimote.on(wiimote.WIIMOTE_KEYS['A'], engineRed)
 
 def engineOff():
   rgbLED.setColor([0, 0, 0])
+  rgbLED2.setColor([0, 0, 0])
 
 wiimote.on(wiimote.WIIMOTE_KEYS['DOWN'], engineOff)
 
