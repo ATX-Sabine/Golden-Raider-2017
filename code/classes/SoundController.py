@@ -4,6 +4,7 @@ class SoundController:
 
   FILES = {
     'MARCH': '../music/march.mp3'
+    'RICXROLL': '../music/rickroll.mp3'
   }
 
   playing = False
