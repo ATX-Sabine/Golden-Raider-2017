@@ -9,7 +9,11 @@ from SX1509 import SX1509
 
 expander = SX1509(0x3E)
 expander.reset(False)
-rgbLED = RGBLED(expander, [5, 6, 7, 8, 4], False)
+rgbLED1 = RGBLED(expander, [0, 1, 2, 3], False)
+rgbLED2 = RGBLED(expander, [3, 4, 5, 6], False)
+rgbLED3 = RGBLED(expander, [6, 7, 8, 9], False)
+rgbLED4 = RGBLED(expander, [9, 10, 11, 12], False)
+
 expander.startInternalClock()
 
 def hsv2rgb(h, s, v):
@@ -38,7 +42,10 @@ hue = 0
 while True:
   color = hsv2rgb(hue, 1, 1)
   print(color)
-  rgbLED.setColor(color)
+  rgbLED1.setColor(color)
+  rgbLED2.setColor(color)
+  rgbLED3.setColor(color)
+  rgbLED4.setColor(color)
   hue += 1
   if hue > 360:
     hue = 0

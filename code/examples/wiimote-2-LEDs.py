@@ -10,8 +10,8 @@ from RGBLED import RGBLED
 expander = SX1509(0x3E)
 expander.reset(False)
 
-rgbLED = RGBLED(expander, [5, 6, 7, 8, 4], False)
-rgbLED2 = RGBLED(expander, [8, 9, 10, 11], False)
+rgbLED = RGBLED(expander, [0, 1, 2, 3], False)
+rgbLED2 = RGBLED(expander, [3, 4, 5, 6], False)
 
 wiimote = WiiMote(None)
 wiimote.init()
