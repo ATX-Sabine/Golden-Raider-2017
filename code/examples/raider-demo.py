@@ -20,7 +20,7 @@ engineLEDRight = RGBLED(expander, [6, 7, 8, 9], False)
 bridgeLED = RGBLED(expander, [9, 10, 11, 12], False)
 
 wiimote = WiiMote(None)
-# wiimote.init()
+wiimote.init()
 
 sound = SoundController()
 
