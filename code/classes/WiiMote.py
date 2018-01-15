@@ -23,6 +23,20 @@ class WiiMote:
 
   def __init__(self, wiimoteID):
     self.deviceID = wiimoteID
+    self.buttonHandlers = {
+      self.WIIMOTE_KEYS['ANY']: [],
+      self.WIIMOTE_KEYS['UP']: [],
+      self.WIIMOTE_KEYS['LEFT']: [],
+      self.WIIMOTE_KEYS['RIGHT']: [],
+      self.WIIMOTE_KEYS['DOWN']: [],
+      self.WIIMOTE_KEYS['A']: [],
+      self.WIIMOTE_KEYS['B']: [],
+      self.WIIMOTE_KEYS['PLUS']: [],
+      self.WIIMOTE_KEYS['MINUS']: [],
+      self.WIIMOTE_KEYS['HOME']: [],
+      self.WIIMOTE_KEYS['ONE']: [],
+      self.WIIMOTE_KEYS['TWO']: []
+    }
 
   def init(self):
     # Add code to make sure it's the right wiimote
@@ -40,22 +54,6 @@ class WiiMote:
     print 'Press PLUS and MINUS together to disconnect and quit.\n'
  
     self.device.rpt_mode = cwiid.RPT_BTN
-
-    self.buttonHandlers = {
-      self.WIIMOTE_KEYS['ANY']: [],
-      self.WIIMOTE_KEYS['UP']: [],
-      self.WIIMOTE_KEYS['LEFT']: [],
-      self.WIIMOTE_KEYS['RIGHT']: [],
-      self.WIIMOTE_KEYS['DOWN']: [],
-      self.WIIMOTE_KEYS['A']: [],
-      self.WIIMOTE_KEYS['B']: [],
-      self.WIIMOTE_KEYS['PLUS']: [],
-      self.WIIMOTE_KEYS['MINUS']: [],
-      self.WIIMOTE_KEYS['HOME']: [],
-      self.WIIMOTE_KEYS['ONE']: [],
-      self.WIIMOTE_KEYS['TWO']: []
-    }
-
     self.debounceWait = False
     self.watchForButtonPress()
 
