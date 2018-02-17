@@ -105,4 +105,5 @@ ENV/
 SECRETS/
 .vscode/
 
-transfer*
+transfer.sh
+/music

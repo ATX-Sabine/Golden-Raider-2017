@@ -1,1 +1,0 @@
-rsync -a -v code/ ATX_Sabine@golden-raider-mk2.local:~/code
