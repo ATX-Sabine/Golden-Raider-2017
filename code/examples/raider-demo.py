@@ -32,6 +32,7 @@ def engineRed():
   engineLEDLeft.setColor([255, 0, 0])
   engineLEDRight.setColor([255, 0, 0])
   engineLEDRight.setColor([255, 0, 0])
+  sound.start(SoundController.FILES['RESISTANCE'])
 
 wiimote.on(wiimote.WIIMOTE_KEYS['A'], engineRed)
 
