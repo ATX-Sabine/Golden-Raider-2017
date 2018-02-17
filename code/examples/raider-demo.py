@@ -35,38 +35,6 @@ def engineRed():
 
 wiimote.on(wiimote.WIIMOTE_KEYS['A'], engineRed)
 
-def imperialMarch():
-  engineLED.setColor([0, 0, 255])
-  engineLEDLeft.setColor([0, 0, 255])
-  engineLEDRight.setColor([0, 0, 255])
-  bridgeLED.setColor([100, 100, 100])
-  sound.start(SoundController.FILES['MARCH'])
-
-wiimote.on(WiiMote.WIIMOTE_KEYS['B'], imperialMarch)
-
-def rickrollColor():
-  global animating, hue
-  print("rickrollColor() called")
-  print(animating)
-  if animating:
-    color = hsv2rgb(hue, 1, 1)
-    print(color)
-    engineLED.setColor([color[0], color[1], color[2]])
-    hue = hue + 1
-    Timer(0.01, rickrollColor).start()
-
-def rickroll():
-  global animating
-  sound.start(SoundController.FILES['RICKROLL'])
-  animating = True
-  print("Setting animating to True")
-  print(animating)
-  Timer(0.01, rickrollColor).start()
-
-wiimote.on(WiiMote.WIIMOTE_KEYS['ONE'], rickroll)
-
-rickroll()
-
 def engineOff():
   global animating
   animating = False
@@ -78,7 +46,31 @@ def engineOff():
 
 wiimote.on(wiimote.WIIMOTE_KEYS['DOWN'], engineOff)
 
-Timer(5, engineOff).start()
+def imperialMarch():
+  engineLED.setColor([0, 0, 255])
+  engineLEDLeft.setColor([0, 0, 255])
+  engineLEDRight.setColor([0, 0, 255])
+  bridgeLED.setColor([100, 100, 100])
+  sound.start(SoundController.FILES['MARCH'])
+
+wiimote.on(WiiMote.WIIMOTE_KEYS['B'], imperialMarch)
+
+def rickrollColor():
+  global animating, hue, engineOff
+  if animating:
+    color = hsv2rgb(hue, 1, 1)
+    engineLED.setColor([color[0], color[1], color[2]])
+    hue = hue + 1
+    Timer(0.01, rickrollColor).start()
+
+def rickroll():
+  global animating, engineOff
+  engineOff()
+  sound.start(SoundController.FILES['RICKROLL'])
+  animating = True
+  Timer(0.01, rickrollColor).start()
+
+wiimote.on(WiiMote.WIIMOTE_KEYS['ONE'], rickroll)
 
 while True:
   hue = hue
