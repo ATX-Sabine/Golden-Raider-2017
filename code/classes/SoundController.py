@@ -14,8 +14,8 @@ class SoundController:
     if self.playing:
       self.stop()
     subprocess.Popen(['mpg123', '-q', file])
-    self.playing = true
+    self.playing = True
 
   def stop(self):
     subprocess.call(['killall', 'mpg123'])
-    self.playing = false
+    self.playing = False

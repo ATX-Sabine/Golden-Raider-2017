@@ -38,13 +38,15 @@ class WiiMote:
       self.WIIMOTE_KEYS['TWO']: []
     }
 
-  def init(self):
-    # Add code to make sure it's the right wiimote
+  def connect(self): 
     try:
       self.device=cwiid.Wiimote()
+      return
     except RuntimeError:
-      self.device=cwiid.Wiimote()
- 
+      self.connect()
+
+  def init(self):  
+    self.connect()
     self.device.rpt_mode = cwiid.RPT_BTN
     self.debounceWait = False
     self.watchForButtonPress()
