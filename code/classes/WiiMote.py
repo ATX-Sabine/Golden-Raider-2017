@@ -40,18 +40,10 @@ class WiiMote:
 
   def init(self):
     # Add code to make sure it's the right wiimote
-    print('Press 1 + 2 on the WiiMote Now')
     try:
       self.device=cwiid.Wiimote()
     except RuntimeError:
-      print "Error opening wiimote connection"
-      quit()
-    
-    print 'Wii Remote connected...\n'
-
-    print 'Wii Remote connected...\n'
-    print 'Press some buttons!\n'
-    print 'Press PLUS and MINUS together to disconnect and quit.\n'
+      self.device=cwiid.Wiimote()
  
     self.device.rpt_mode = cwiid.RPT_BTN
     self.debounceWait = False
