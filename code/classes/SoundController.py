@@ -4,7 +4,8 @@ class SoundController:
 
   FILES = {
     'MARCH': '../music/march.mp3',
-    'RICKROLL': '../music/rickroll.mp3'
+    'RICKROLL': '../music/rickroll.mp3',
+    'RESISTANCE': '../music/resistance-march.mp3'
   }
 
   playing = False
@@ -13,6 +14,8 @@ class SoundController:
     if self.playing:
       self.stop()
     subprocess.Popen(['mpg123', '-q', file])
+    self.playing = true
 
   def stop(self):
     subprocess.call(['killall', 'mpg123'])
+    self.playing = false
