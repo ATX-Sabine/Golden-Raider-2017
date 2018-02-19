@@ -67,7 +67,8 @@ def rickrollColor():
 def rickroll():
   global animating, engineOff
   engineOff()
-  sound.start(SoundController.FILES['RICKROLL'])
+  sound.stop()
+  sound.start(SoundController.FILES['RICKROLL'])  
   animating = True
   Timer(0.01, rickrollColor).start()
 
